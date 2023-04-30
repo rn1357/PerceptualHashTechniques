@@ -34,12 +34,12 @@ if __name__ == "__main__":
     for threshold in thresholdList:
         for i in range(len(Robustness_readerDf)): 
             HammingDistanceListforRobustness.append(Robustness_readerDf.loc[i,"Hamming Distance"])
-            num_of_fingerprints_for_robustness = tableforRobustness(HammingDistanceListforRobustness,  threshold)
-            RobustnessDict[threshold] = round(num_of_fingerprints_for_robustness,4)
+        num_of_fingerprints_for_robustness = tableforRobustness(HammingDistanceListforRobustness,  threshold)
+        RobustnessDict[threshold] = round(num_of_fingerprints_for_robustness,4)
         for j in range(len(Discrimination_readerDf)): 
             HammingDistanceListforDiscrimination.append(Discrimination_readerDf.loc[j,"Hamming Distance"])
-            num_of_fingerprints_for_discrimination = tableforDiscrimination(HammingDistanceListforDiscrimination,  threshold)
-            Dict[threshold] = round(num_of_fingerprints_for_discrimination,4)
+        num_of_fingerprints_for_discrimination = tableforDiscrimination(HammingDistanceListforDiscrimination,  threshold)
+        Dict[threshold] = round(num_of_fingerprints_for_discrimination,4)
     with open(Robustness_threshold, 'w') as f3:
         w1 = csv.writer(f3)
         w1.writerow(RobustnessHeader)
