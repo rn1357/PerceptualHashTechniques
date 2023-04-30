@@ -17,8 +17,8 @@ if __name__ == "__main__":
     ax.set_xlabel("Threshold")
     ax.set_ylabel("Robustness")
     ax2.set_ylabel("Discrimination Capability")
-    Robustness_readerDf.plot(y=["Robustness"], ax=ax, color='Black', style='+-')
-    Discrimination_readerDf.plot(y=["Discrimination Capability"], ax=ax2, title='Robusness and Discrimination Capability interaction',color='Black', style='.--')
+    Robustness_readerDf.plot(x="Threshold",y="Robustness", ax=ax, color='Black', style='+-')
+    Discrimination_readerDf.plot(x="Threshold",y="Discrimination Capability", ax=ax2, title='Robusness and Discrimination Capability interaction',color='Black', style='.--')
     plt.show()
     Robustness_readerDf.index.name = 'Threshold'
     Discrimination_readerDf.index.name = 'Threshold'
