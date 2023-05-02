@@ -29,3 +29,7 @@ if __name__ == "__main__":
     ax2.set_ylabel("Discrimination Capability")
     df3.plot(x = 'Robustness', y = 'Discrimination Capability', title='Robustness and Discrimination Capability correlation', color='Black', style='+-')
     plt.show()
+    #area calculation
+    y = df3['Discrimination Capability']
+    area = simpson(y, dx=0.2)
+    print("area =", area)
