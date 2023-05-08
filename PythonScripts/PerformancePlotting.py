@@ -2,6 +2,7 @@ import sys
 import matplotlib.pylab as plt
 import pandas as pd
 from scipy.integrate import simpson
+from sklearn.metrics import auc
 
 if __name__ == "__main__":
     Robustness_csvfilepath = sys.argv[1]
@@ -33,6 +34,4 @@ if __name__ == "__main__":
     # plt.show()
 
     #area calculation
-    y = df3['Discrimination Capability']
-    area = simpson(y, dx=0.2)
-    print("area =", area)
+    print('computed AUC using sklearn.metrics.auc: {}'.format(auc(x,y)))
